@@ -1,4 +1,3 @@
-from liboccup import timestamp, target_ids, data, driver
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -48,10 +47,6 @@ with open('library_occupancy.csv', 'a', newline='') as file:
     writer.writerow(data)
 
     print(f"\nData saved to library_occupancy.csv at {timestamp} EST")
-
-# Schedule to run every hour between 8 AM and 11 PM
-for hour in range(8, 24):  # 8 to 23 (11 PM)
-    schedule.every().day.at(f"{hour:02d}:00").do(run_scraper)
 
 print("Scheduler started. Will run every hour from 8 AM to 11 PM. Press Ctrl+C to stop.")
 while True:
