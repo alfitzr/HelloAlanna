@@ -29,8 +29,6 @@ jobs:
     - name: Commit and push CSV
       run: |
         git config --local user.email "action@github.com"
-        git add ./data/
-        git commit -m "Latest data" && git push || true
         git config --local user.name "GitHub Action"
         git add library_occupancy.csv
         git commit -m "Update occupancy data $(date)" || exit 0
