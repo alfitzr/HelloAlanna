@@ -24,7 +24,7 @@ jobs:
         sudo apt-get install -y chromium-browser
     
     - name: Run scraper
-      run: lib-scrapper.py
+      run: lib-scrapper.py 
     
     - name: Commit and push CSV
       run: |
